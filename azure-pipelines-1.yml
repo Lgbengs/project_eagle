@@ -12,10 +12,10 @@ variables:
   azureSubscription: '635c773d-d2fa-4546-8a0b-aedbf1af2603'
 
   # Web app name
-  webAppName: ''
+  webAppName: 'MyAwesomeSuperWebApp'
 
   # Environment name
-  environmentName: 'MyAwesomeSuperWebApp'
+  environmentName: 'livingbridege'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
