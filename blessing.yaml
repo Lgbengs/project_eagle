@@ -1,0 +1,28 @@
+trigger:
+- master
+
+pool:
+  name: Default
+  demands:
+    - agent.name -equals VNENT01TFSP02V
+
+parameters:
+- name: remote_machines
+  type: object
+  default:
+    - 'Admin.bleesing.osayo@BA-SVCS-Q01' # Replace with the user + IP address or hostname of the first window SSH endpoint
+    # - 'user@5.6.7.8' # Replace with the user + IP address of the second windows SSH endpoint
+    # - 'user@1.0.0.1' # Replace with the user + IP address of the third Linux windows endpoint
+
+stages:
+- stage: Test
+  jobs:
+  - job: testjob
+    continueOnError: false
+    steps:
+    - task: Bash@3
+      displayName: 'Test Echo'
+      inputs:
+        targetType: inline
+        script: |
+          echo "Testing do4m-ubuntu-vm ADO Agent server"
